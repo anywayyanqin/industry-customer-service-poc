@@ -1,0 +1,5 @@
+# Netlify 部署配置：纯静态站点，无需构建
+# 发布目录为本地保存的产业版页面（含 enhance.js / enhance.css 注入层）
+[build]
+  command = "echo 'static site - no build needed'"
+  publish = "hengyan-platform-local"

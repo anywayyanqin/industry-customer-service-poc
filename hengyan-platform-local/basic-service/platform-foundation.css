@@ -1,0 +1,48 @@
+/* Shared Guojun institutional UI baseline. Page structure and content stay unchanged. */
+:root{
+  --gj-brand:#0059ec;
+  --gj-brand-secondary:#5795fa;
+  --gj-page:#f5f7fa;
+  --gj-category:#192646;
+  --gj-heading:rgba(0,0,0,.88);
+  --gj-body:rgba(0,0,0,.60);
+  --gj-auxiliary:rgba(0,0,0,.45);
+  --gj-border:rgba(0,0,0,.15);
+  --gj-divider:rgba(0,0,0,.06);
+  --gj-surface:#fff;
+  --gj-gradient:linear-gradient(120deg,#0059ec,#76aaff);
+  --blue:#0059ec!important;
+  --b:#0059ec!important;
+  --navy:#0059ec!important;
+  --bg:#f5f7fa!important;
+}
+html,body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif!important}
+body{font-size:14px!important;line-height:1.6!important;background:var(--gj-page)!important}
+button,input,select,textarea{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;font-size:14px}
+input,select,textarea{border-radius:6px}
+.crumb,main{max-width:1440px}
+.hero h1,.detail-main h1,.detail-hero h1{font-size:28px!important;line-height:1.45;color:inherit}
+.hero p{font-size:14px}
+.hero{background:var(--gj-gradient)!important}
+.intro{background:var(--gj-surface)!important;color:var(--gj-heading)!important;border:1px solid var(--gj-divider)!important;border-left:3px solid var(--gj-brand)!important;border-radius:6px;padding:16px 20px!important}
+.intro p,.intro>span{color:var(--gj-body)!important}
+.panel,.section,.card,.course,.detail-main,.detail-side,.chapters,.outline,.side-card,.form-shell,
+.talent-intro article,.expert-section,.expert-card,.expert-library-entry,.overall,.finding,.critical-item,
+.activity-feature,.activity-results,.all-activities{border-radius:6px}
+.primary,.secondary,.work,.actions button,.cs-action,.talent-form-button,.expert-book,
+.activity-feature-actions button,.hero button,.form-head button{border-radius:8px}
+.primary,.work,.actions .submit,.talent-form-button,.expert-book{background:var(--gj-brand)!important}
+.hero .primary{background:#fff!important;color:var(--gj-brand)!important;border-color:#fff!important}
+.hero .ghost{background:transparent!important;color:#fff!important;border-color:rgba(255,255,255,.65)!important}
+.hero,.course-cover{background-image:var(--gj-gradient)!important}
+.cs-new-badge,.hxb-new{background:var(--gj-brand-secondary)!important}
+.cs-update-dot,.update-dot{background:var(--gj-brand-secondary)!important}
+.category,.service,.guide-card,.feature-card,.service-map,.map-col,.info-panel{border-radius:6px!important}
+.hero{border-radius:6px!important;box-shadow:0 10px 15px rgba(0,89,236,.15)!important}
+.workspace,.hero-actions button,.work-guide button,.training-center-entry button{border-radius:8px!important}
+.tag,.service-status,.directory-badge,.article-type{border-radius:4px!important}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:2px solid rgba(0,89,236,.32)!important;outline-offset:2px
+}
+button:disabled,input:disabled,select:disabled,textarea:disabled{cursor:not-allowed!important;opacity:.45}
+@media(max-width:820px){.hero h1,.detail-main h1,.detail-hero h1{font-size:26px!important}}

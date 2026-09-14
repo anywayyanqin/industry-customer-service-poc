@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>终端下载｜产业服务平台</title>
+  <style>
+    :root{--blue:#1f6bff;--deep:#0e48d1;--text:#1f2937;--muted:#6b7280;--line:#d7dce4;--bg:#f4f7fb}
+    *{box-sizing:border-box}
+    body{margin:0;background:#fff;color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",Arial,sans-serif}
+    .top{height:42px;border-bottom:1px solid #eceff3;background:#fff;display:flex;align-items:center;justify-content:center;gap:56px;color:#8a93a3;font-size:13px}
+    .top span{display:inline-flex;gap:24px}
+    .header{height:70px;border-bottom:1px solid #e6eaf0;background:#fff;display:flex;align-items:center;justify-content:center;gap:32px;position:sticky;top:0;z-index:10}
+    .logo{display:flex;align-items:center;gap:12px;border:0;background:none;color:#111827;font-weight:700;font-size:20px;cursor:pointer}
+    .logo span{display:grid;place-items:center;width:42px;height:42px;border-radius:8px;background:linear-gradient(135deg,#2a7cff,#0f58e9);color:#fff;font-size:16px}
+    .logo em{font-style:normal;font-size:12px;color:var(--blue);background:#eef4ff;border-radius:4px;padding:3px 6px}
+    nav{display:flex;align-items:center;gap:26px}
+    nav a{position:relative;text-decoration:none;color:#222;font-size:15px;font-weight:600;padding:26px 0}
+    nav a.active{color:var(--blue)}
+    nav a.active::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--blue)}
+    .work{height:42px;border:0;background:var(--blue);color:#fff;border-radius:2px;padding:0 18px;font-size:15px;font-weight:700;cursor:pointer}
+    .notice{height:34px;background:#fff6e6;border-bottom:1px solid #f0ddb8;display:flex;align-items:center;justify-content:center;color:#8a5b14;font-size:13px;gap:20px}
+    .notice b{color:#9a6500}
+    .blue-band{height:56px;background:linear-gradient(135deg,#0f4bda 0%,#2879ff 42%,#0f4bda 100%);box-shadow:inset 0 -10px 0 rgba(0,0,0,.18)}
+    .crumb{max-width:1480px;margin:20px auto 0;padding:0 24px;font-size:13px;color:#8792a2}
+    .crumb a{color:var(--blue);text-decoration:none}
+    main{max-width:1480px;margin:0 auto;padding:0 24px 64px}
+    .download-shell{margin-top:20px;border-top:0;background:#fff}
+    .terminal-tabs{height:82px;display:grid;grid-template-columns:repeat(5,1fr);align-items:center;border-bottom:1px solid transparent}
+    .terminal-tabs button{height:82px;border:0;background:#fff;color:#323b4a;font-size:24px;font-weight:700;cursor:pointer}
+    .terminal-tabs button.active{color:#1382e9}
+    .terminal-tabs button.active::before,.terminal-tabs button.active::after{content:"";display:inline-block;width:72px;height:2px;margin:0 12px 7px;background:linear-gradient(90deg,transparent,#52a9ef)}
+    .terminal-tabs button.active::after{background:linear-gradient(90deg,#52a9ef,transparent)}
+    .software-table{width:100%;border-collapse:collapse;table-layout:fixed;border:1px solid var(--line);font-size:18px;line-height:1.55}
+    .software-table th{height:96px;border:1px solid var(--line);background:#fff;font-size:22px;font-weight:800;text-align:center}
+    .software-table td{border:1px solid var(--line);vertical-align:middle;padding:22px 32px;background:#fff}
+    .software-table .col-soft{width:180px;text-align:center;padding:22px 18px}
+    .software-table .col-desc{width:520px}
+    .software-table .col-down{width:160px;text-align:center;padding:14px}
+    .software-table .col-note{width:480px;color:#4b5563}
+    .software-table .col-use{width:140px;text-align:center}
+    .app-logo{width:92px;height:92px;margin:0 auto 14px;border-radius:14px;display:grid;place-items:center;color:#fff;font-weight:900;font-size:28px;box-shadow:0 6px 18px rgba(15,35,80,.14)}
+    .app-logo.kq3{background:linear-gradient(135deg,#08090c,#111827)}
+    .app-logo.kq3 i,.app-logo.kq2 i{display:block;width:58px;height:58px;background:linear-gradient(45deg,transparent 0 34%,#ef233c 35% 58%,transparent 59%),linear-gradient(135deg,#ef233c 0 36%,transparent 37%);clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+    .app-logo.kq2{background:#ed1c24}
+    .app-logo.ths{background:linear-gradient(135deg,#3ec8ff,#7357ff)}
+    .app-logo.wh{background:linear-gradient(135deg,#111827 0 42%,#e11d2e 43% 100%)}
+    .soft-name{font-size:20px;font-weight:800;color:#374151}
+    .desc{color:#374151;font-weight:600}
+    .download-link,.use-link{display:inline-block;color:#1683ff;text-decoration:none;font-weight:700}
+    .download-link:hover,.use-link:hover{text-decoration:underline}
+    .note-block{min-height:70px;display:flex;align-items:center}
+    .section-foot{margin-top:20px;padding:18px 22px;background:#f7faff;border:1px solid #dce7fb;color:#5e6b7c;font-size:14px}
+    @media (max-width:1100px){
+      .header{justify-content:flex-start;padding:0 18px;overflow-x:auto}
+      nav{gap:16px}.top{display:none}
+      .terminal-tabs{grid-template-columns:repeat(2,1fr);height:auto}
+      .terminal-tabs button{height:56px;font-size:18px}
+      .terminal-tabs button.active::before,.terminal-tabs button.active::after{display:none}
+      .software-table{display:block;overflow-x:auto;white-space:normal}
+      .software-table table{min-width:1100px}
+    }
+  </style>
+</head>
+<body>
+  <div class="top"><span>国泰君安期货　市场洞察　业务办理　活动中心　API 服务</span><span>服务热线 400-800-2026　帮助中心</span></div>
+  <header class="header">
+    <button class="logo" data-home><span>国泰</span><b>产业服务平台</b><em>产业版</em></button>
+    <nav>
+      <a href="/" >首页</a>
+      <a href="/#basic">基础服务</a>
+      <a href="/#smart" class="active">智能交易</a>
+      <a href="/#research-weekly">投研支持</a>
+      <a href="/#risk">风险管理</a>
+      <a href="/#bulk">大宗采销</a>
+      <a href="/#finance">金融服务</a>
+      <a href="/#cross-border">跨境支持</a>
+    </nav>
+    <button class="work" data-work>我的工作台</button>
+  </header>
+  <div class="notice"><b>数据说明</b><span>软件下载信息为页面展示数据，具体版本与下载地址以官方渠道为准。</span></div>
+  <div class="blue-band"></div>
+  <div class="crumb"><a href="/">产业版首页</a> › <a href="/#smart">智能交易</a> › <b>终端下载</b></div>
+  <main>
+    <section class="download-shell" aria-label="终端下载">
+      <div class="terminal-tabs" role="tablist" aria-label="软件下载类型">
+        <button class="active" type="button">期货交易</button>
+        <button type="button">股票期权</button>
+        <button type="button">仿真测试</button>
+        <button type="button">程序化交易软件</button>
+        <button type="button">手机软件</button>
+      </div>
+      <table class="software-table">
+        <thead>
+          <tr>
+            <th class="col-soft">软件</th>
+            <th class="col-desc">软件介绍</th>
+            <th class="col-down">下载地址</th>
+            <th class="col-note">备注</th>
+            <th class="col-use">使用说明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col-soft" rowspan="2"><div class="app-logo kq3"><i></i></div><div class="soft-name">快期V3</div></td>
+            <td class="col-desc desc" rowspan="2">快期3期货行情交易终端作为一款先进的模块化软件具有良好的扩展性和可塑性。突破传统行情软件模式实现多屏、多板块的同时显示与自由切换；支持全历史TICK图行情、图表性能优化，提供技术分析以及画线下单、三键下单、条件单、止损单等多种交易功能。</td>
+            <td class="col-down"><a class="download-link" href="#" data-download>软件下载</a></td>
+            <td class="col-note"><div class="note-block">更新日期2025-09-23 版本号3.8.243.5840<br>MD5：35cea7673e7c7c2be9a244ff1cf5d26b<br>该软件下载链接由上海信易信息科技股份有限公司提供</div></td>
+            <td class="col-use"><a class="use-link" href="#" data-manual>点击查看</a></td>
+          </tr>
+          <tr>
+            <td class="col-down"><a class="download-link" href="#" data-download>软件下载（64位版）</a></td>
+            <td class="col-note"><div class="note-block">更新日期2025-09-23 版本号3.9.2504.4<br>MD5：fab9ca22478ef3d7369b376ad2d49ff1<br>该软件下载链接由上海信易信息科技股份有限公司提供</div></td>
+            <td class="col-use"><a class="use-link" href="#" data-manual>点击查看</a></td>
+          </tr>
+          <tr>
+            <td class="col-soft" rowspan="3"><div class="app-logo kq2"><i></i></div><div class="soft-name">快期V2</div></td>
+            <td class="col-desc desc" rowspan="3">快期2期货交易软件是一套致力于让期货投资者简单、方便、快捷实现期货交易的专业下单软件。软件智能自动开平，数据本地实时计算，全界面动态刷新；在性能可靠的同时兼顾交易速度，演绎了简单和速度的关系。</td>
+            <td class="col-down"><a class="download-link" href="#" data-download>软件下载</a></td>
+            <td class="col-note"><div class="note-block">更新日期2025-09-23 版本号2.93.405.1875<br>MD5：4af64df6ada2a9073278135726f643ce<br>该软件下载链接由上海信易信息科技股份有限公司提供</div></td>
+            <td class="col-use"><a class="use-link" href="#" data-manual>点击查看</a></td>
+          </tr>
+          <tr>
+            <td class="col-down"><a class="download-link" href="#" data-download>软件下载（商密版）</a></td>
+            <td class="col-note"><div class="note-block">更新日期2025-09-23 版本号2.93.290.1643<br>MD5：b3013417d3c2459ddd45ad259e5f9622<br>该软件下载链接由上海信易信息科技股份有限公司提供</div></td>
+            <td class="col-use"><a class="use-link" href="#" data-manual>点击查看</a></td>
+          </tr>
+          <tr>
+            <td class="col-down"><a class="download-link" href="#" data-download>软件下载（IPV6版）</a></td>
+            <td class="col-note"><div class="note-block">更新日期2025-09-23 版本号2.93.174.1430<br>MD5：76d7549e1853886c3202035942277708<br>该软件下载链接由上海信易信息科技股份有限公司提供</div></td>
+            <td class="col-use"><a class="use-link" href="#" data-manual>点击查看</a></td>
+          </tr>
+          <tr>
+            <td class="col-soft"><div class="app-logo ths">⌁</div><div class="soft-name">同花顺期货通</div></td>
+            <td class="col-desc desc">同花顺期货通是同花顺旗下一款集行情、资讯、特色服务等为一体的专业期货软件，覆盖中金所、上期所、大商所、郑商所、广期所及多个热门品种，致力于帮助用户在期货交易中赢得先机。</td>
+            <td class="col-down"><a class="download-link" href="#" data-download>软件下载</a></td>
+            <td class="col-note"><div class="note-block">更新日期2025-12-18 版本号4.39<br>MD5：25fad8844742d699659141dae5e6099f<br>该软件下载链接由浙江核新同花顺网络股份有限公司提供</div></td>
+            <td class="col-use"><a class="use-link" href="#" data-manual>点击查看</a></td>
+          </tr>
+          <tr>
+            <td class="col-soft"><div class="app-logo wh">wh6</div><div class="soft-name">文华WH6</div></td>
+            <td class="col-desc desc">文华WH6期货行情交易软件是为个人投资者量身打造的一款集行情、分析、交易于一体的智能交易软件，提供云端条件单、云端止损/盈单、云端备份等功能，力求为交易者提供更优质的行情下单体验。</td>
+            <td class="col-down"><a class="download-link" href="#" data-download>软件下载</a></td>
+            <td class="col-note"><div class="note-block">更新日期2025-03-25 版本号6.8.775<br>MD5：ab5393b1b38d5e25020ecae00b8c09f1<br>该软件下载链接由上海文华财经资讯股份有限公司提供</div></td>
+            <td class="col-use"><a class="use-link" href="#" data-manual>点击查看</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="section-foot">提示：当前页面用于承接“终端下载”入口。下载与使用说明按钮为展示入口，可在正式环境接入真实软件包地址、版本校验与说明文档。</div>
+    </section>
+  </main>
+  <script>
+    function tip(text){
+      var old=document.querySelector('.toast'); if(old) old.remove();
+      var el=document.createElement('div');
+      el.className='toast';
+      el.textContent=text;
+      el.style.cssText='position:fixed;left:50%;bottom:34px;transform:translateX(-50%);background:rgba(17,24,39,.92);color:#fff;padding:10px 18px;border-radius:6px;font-size:14px;z-index:1000';
+      document.body.appendChild(el);
+      setTimeout(function(){el.remove()},1800);
+    }
+    document.addEventListener('click',function(e){
+      var home=e.target.closest('[data-home]');
+      if(home){location.href='/';return}
+      var work=e.target.closest('[data-work]');
+      if(work){location.href='/#workbench';return}
+      if(e.target.closest('[data-download]')){e.preventDefault();tip('软件下载入口待接入正式地址')}
+      if(e.target.closest('[data-manual]')){e.preventDefault();tip('使用说明文档待接入')}
+    });
+  </script>
+</body>
+</html>

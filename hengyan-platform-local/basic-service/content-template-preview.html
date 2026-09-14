@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>内容服务模板预览</title>
+  <link rel="stylesheet" href="content-service-templates.css?v=20260820-5">
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#f4f7fb;color:#13233a;font-family:"Microsoft YaHei",Arial,sans-serif}.preview-head{height:72px;background:#fff;border-bottom:1px solid #dce4ef;display:flex;align-items:center}.preview-inner{width:min(1440px,calc(100% - 64px));margin:auto}.preview-head .preview-inner{display:flex;align-items:center;justify-content:space-between}.preview-head h1{font-size:22px;margin:0}.preview-head a{color:#075ee5;text-decoration:none}.prototype-notice{width:min(1440px,calc(100% - 64px));margin:22px auto 0;padding:13px 18px;background:#eef5ff;border-left:3px solid #0866e8;color:#51657f}.preview-grid{width:min(1440px,calc(100% - 64px));margin:22px auto;display:grid;grid-template-columns:1fr 1fr;gap:20px}.preview-card{background:#fff;border:1px solid #dbe4ef;padding:28px;min-height:220px;box-shadow:0 8px 22px rgba(31,67,117,.05)}.preview-card span{font-size:13px;color:#0965df}.preview-card h2{margin:16px 0 10px;font-size:25px}.preview-card p{line-height:1.8;color:#657892}.preview-card button{margin-top:18px;border:0;background:#075fe6;color:white;padding:11px 25px;cursor:pointer}.preview-card:last-child button{background:white;color:#075fe6;border:1px solid #075fe6}@media(max-width:800px){.preview-inner,.prototype-notice,.preview-grid{width:calc(100% - 28px)}.preview-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header class="preview-head"><div class="preview-inner"><h1>内容服务模板预览</h1><span>独立模板设计区</span></div></header>
+  <div class="prototype-notice">这里用于单独检查模板结构与交互。模板样式和渲染逻辑已从具体业务页面分离，后续内容专题可以复用。</div>
+  <main class="preview-grid">
+    <article class="preview-card"><span>模板一 · 专业内容</span><h2>通用内容服务模板</h2><p>适合政策解读、制度建设、基础知识、案例分析等长篇内容，包含发布时间、负责人、资料附件、使用提示和免责声明。</p><button data-open="content-template-demo">查看模板</button></article>
+    <article class="preview-card"><span>模板二 · 信息发布</span><h2>公告模板</h2><p>适合平台通知、内容更新、活动安排和服务规则公告，保留公告编号、发布时间、责任部门及正文字号调节。</p><button data-open="announcement-template-demo">查看模板</button></article>
+  </main>
+  <script src="content-service-templates.js?v=20260820-5"></script>
+  <script>document.querySelectorAll('[data-open]').forEach(function(button){button.addEventListener('click',function(){ContentServiceTemplates.openRegistered(button.dataset.open)})});</script>
+</body>
+</html>

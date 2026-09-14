@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>关注品种现货价格｜产业服务平台</title>
+  <style>
+    :root{--blue:#2864ea;--blue2:#164fda;--ink:#17243a;--muted:#6f7c90;--line:#e5eaf1;--soft:#f4f7fb;--up:#ef3432;--down:#05a965;--amber:#a66a13}
+    *{box-sizing:border-box}body{margin:0;background:#f3f6fa;color:var(--ink);font-family:"PingFang SC","Microsoft YaHei",Arial,sans-serif;font-size:14px}button,input,select{font:inherit}button,a{cursor:pointer}
+    .utility{height:32px;background:#fff;border-bottom:1px solid #edf0f4;color:#9099a8;font-size:12px;display:flex;justify-content:space-between;align-items:center;padding:0 max(24px,calc((100% - 1240px)/2))}
+    .utility span+span{margin-left:24px}.main-header{height:68px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:26px;padding:0 max(24px,calc((100% - 1240px)/2));position:sticky;top:0;z-index:10}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#111;white-space:nowrap}.mark{width:42px;height:42px;border-radius:7px;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:700}.brand b{font-size:18px}.brand em{font-style:normal;font-size:11px;color:var(--blue);background:#edf3ff;padding:3px 6px;border-radius:3px}
+    nav{display:flex;align-items:center;gap:4px;flex:1}nav a{padding:23px 11px;color:#202938;text-decoration:none;white-space:nowrap}nav a:hover,nav a.active{color:var(--blue)}nav a.active{box-shadow:inset 0 -2px var(--blue)}.work{border:0;background:var(--blue);color:#fff;padding:13px 18px;font-weight:600}
+    .crumb{max-width:1240px;margin:0 auto;padding:18px 0 12px;color:#8a94a4;font-size:12px}.crumb a{color:var(--blue);text-decoration:none}.page{max-width:1240px;margin:0 auto 54px}
+    .page-title{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:18px}.page-title small{letter-spacing:.12em;color:#8994a5}.page-title h1{font-family:"Songti SC",STSong,serif;font-size:32px;font-weight:500;margin:7px 0 6px}.page-title p{margin:0;color:var(--muted)}.stamp{text-align:right;color:var(--muted);font-size:12px}.stamp b{display:block;color:var(--ink);font-size:14px;margin-bottom:4px}
+    .compare{display:grid;grid-template-columns:1fr 180px 1fr;background:#0e2f61;color:#fff;border-radius:8px;overflow:hidden;min-height:168px;box-shadow:0 14px 34px rgba(13,43,90,.12)}.quote-side{padding:27px 32px}.quote-side.right{text-align:right;background:linear-gradient(115deg,rgba(40,100,234,.14),rgba(40,100,234,.32))}.quote-side span{display:block;color:#a9c1e7;font-size:12px;margin-bottom:12px}.quote-side strong{font:600 34px/1.1 "DIN Alternate","Arial Narrow",sans-serif;letter-spacing:.02em}.quote-side small{display:block;margin-top:8px;color:#c3d1e6}.basis-meter{display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;background:rgba(255,255,255,.05)}.basis-meter:before{content:"";position:absolute;left:50%;top:22px;bottom:22px;width:1px;background:rgba(255,255,255,.18)}.basis-meter span,.basis-meter strong,.basis-meter small{position:relative;background:#173d73;padding:3px 8px}.basis-meter span{font-size:11px;color:#b7c9e3}.basis-meter strong{font:600 27px "DIN Alternate",sans-serif;color:#ffcf87}.basis-meter small{color:#b7c9e3}.compare-name{grid-column:1/-1;background:#fff;color:var(--ink);display:flex;justify-content:space-between;align-items:center;padding:12px 18px;border:1px solid var(--line);border-top:0}.compare-name b{font-size:15px}.compare-name span{color:var(--muted);font-size:12px}
+    .summary{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}.summary article{background:#fff;border:1px solid var(--line);padding:15px 17px;border-radius:6px}.summary span{font-size:12px;color:var(--muted)}.summary b{display:block;margin-top:7px;font:600 21px "DIN Alternate",sans-serif}.summary small{color:var(--muted)}
+    .market-panel{background:#fff;border:1px solid var(--line);border-radius:7px}.panel-head{padding:17px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px}.panel-head h2{font-size:18px;margin:0}.panel-head p{color:var(--muted);margin:0;flex:1}.panel-head button{border:1px solid #b8caf5;background:#fff;color:var(--blue);padding:8px 13px;border-radius:4px}.tools{display:flex;gap:10px;padding:12px 20px;border-bottom:1px solid var(--line);background:#fafbfd}.tools input,.tools select{height:34px;border:1px solid #d6dde8;background:#fff;padding:0 10px;color:var(--ink);outline:none}.tools input{width:230px}.tools input:focus,.tools select:focus{border-color:var(--blue)}.watch-toggle{display:flex;align-items:center;gap:6px;margin-left:auto;color:var(--muted);font-size:12px}.watch-toggle input{width:auto;height:auto}
+    table{width:100%;border-collapse:collapse}th,td{padding:13px 14px;border-bottom:1px solid #edf0f4;text-align:right;white-space:nowrap}th{font-weight:400;color:#8994a5;font-size:12px;background:#fff}th:first-child,td:first-child{text-align:left}tbody tr{cursor:pointer;transition:background .15s}tbody tr:hover,tbody tr.selected{background:#f3f7ff}.product{display:flex;align-items:center;gap:10px}.product i{width:30px;height:30px;border-radius:4px;background:#edf3ff;color:var(--blue);display:grid;place-items:center;font-style:normal;font-weight:700}.product b{display:block}.product small{display:block;color:var(--muted);margin-top:2px}.num{font-family:"DIN Alternate","Arial Narrow",sans-serif;font-size:15px}.up{color:var(--up)}.down{color:var(--down)}.contract{color:var(--blue)}.spark{width:70px;height:24px}.spark polyline{fill:none;stroke:var(--blue);stroke-width:1.8}.spark line{stroke:#dce3ed;stroke-dasharray:2 2}.tag{font-size:11px;padding:3px 6px;background:#edf3ff;color:var(--blue);border-radius:3px}.alert{border:0;background:none;color:var(--blue)}.alert.on{color:var(--muted)}
+    .note{padding:13px 20px;color:var(--muted);font-size:12px;background:#fafbfd}.footer{background:#fff;border-top:1px solid var(--line);padding:27px max(24px,calc((100% - 1240px)/2));display:flex;justify-content:space-between;color:#8a94a4;font-size:12px}.footer b{color:var(--ink);font-size:14px}.toast{position:fixed;left:50%;bottom:34px;transform:translate(-50%,12px);background:#162338;color:#fff;padding:10px 17px;border-radius:5px;opacity:0;pointer-events:none;transition:.2s}.toast.show{opacity:1;transform:translate(-50%,0)}
+    @media(max-width:900px){.utility{display:none}.main-header{padding:0 14px;overflow:auto}.main-header nav{display:none}.page,.crumb{margin-left:14px;margin-right:14px}.compare{grid-template-columns:1fr 110px 1fr}.quote-side{padding:20px 15px}.quote-side strong{font-size:25px}.summary{grid-template-columns:repeat(2,1fr)}.market-panel{overflow:auto}.tools{min-width:760px}.panel-head{min-width:760px}table{min-width:980px}.page-title{align-items:flex-start}.stamp{display:none}}
+  </style>
+</head>
+<body>
+  <div class="utility"><div><span>国泰君安期货</span><span>市场洞察</span><span>业务办理</span><span>活动中心</span><span>API 服务</span></div><div><span>服务热线 400-800-2026</span><span>帮助中心</span></div></div>
+  <header class="main-header">
+    <a class="brand" href="/"><span class="mark">国泰</span><b>产业服务平台</b><em>产业版</em></a>
+    <nav><a href="/">首页</a><a href="/#basic">基础服务</a><a href="/#smart">智能交易</a><a href="/#research-overview">投研支持</a><a href="/#risk">风险管理</a><a href="/#sourcing">大宗采销</a><a href="/#finance">金融服务</a><a href="/#crossborder">跨境支持</a></nav>
+    <a class="work" href="/">我的工作台</a>
+  </header>
+  <div class="crumb"><a href="/">产业版首页</a>　›　<b>关注品种现货价格</b></div>
+  <main class="page">
+    <section class="page-title"><div><small>SPOT &amp; FUTURES WATCH</small><h1>关注品种现货价格</h1><p>将客户关注品种的现货价格与对应主力期货放在一起，持续观察基差变化。</p></div><div class="stamp"><b>数据日期　2026-08-14</b><span>最近更新　15:30</span></div></section>
+
+    <section class="compare" aria-label="现货期货价格对比">
+      <div class="quote-side"><span>上海现货价</span><strong id="spot-price">79,240</strong><small id="spot-change">较昨日 +180</small></div>
+      <div class="basis-meter"><span>当前基差</span><strong id="basis-value">+80</strong><small id="basis-change">日变化 +35</small></div>
+      <div class="quote-side right"><span id="futures-label">CU2609 主力期货</span><strong id="futures-price">79,160</strong><small>期现对比参考</small></div>
+      <div class="compare-name"><b id="compare-name">沪铜 · 1#电解铜</b><span id="compare-region">上海 · 元/吨</span></div>
+    </section>
+
+    <section class="summary">
+      <article><span>已关注品种</span><b>6</b><small>覆盖 4 个板块</small></article>
+      <article><span>正基差品种</span><b>4</b><small>现货高于期货</small></article>
+      <article><span>今日基差扩大</span><b class="up">3</b><small>需关注采购节奏</small></article>
+      <article><span>已设置提醒</span><b>4</b><small>触发后站内通知</small></article>
+    </section>
+
+    <section class="market-panel">
+      <div class="panel-head"><h2>我的现货关注清单</h2><p>点击任一行，在上方切换现货与期货对比</p><button id="manage">管理关注品种</button></div>
+      <div class="tools"><input id="search" placeholder="搜索品种或期货合约"><select id="category"><option>全部板块</option><option>有色金属</option><option>黑色金属</option><option>能源化工</option><option>农产品</option></select><select id="region"><option>全部地区</option><option>上海</option><option>杭州</option><option>张家港</option><option>山东</option></select><label class="watch-toggle"><input type="checkbox" id="alert-only"> 仅看已设置提醒</label></div>
+      <table><thead><tr><th>关注品种</th><th>现货价格</th><th>日涨跌</th><th>对应期货</th><th>期货价格</th><th>基差</th><th>基差变化</th><th>近 7 日</th><th>提醒</th></tr></thead><tbody id="rows"></tbody></table>
+      <div class="note">价格口径：各地区主流现货成交参考价；期货价格取对应主力合约。基差 = 现货价格 − 期货价格。</div>
+    </section>
+  </main>
+  <footer class="footer"><div><b>国泰产业服务平台 · 产业版</b><p>研究洞察 · 风险管理 · 大宗采销 · 交易接入</p></div><div>合规声明　隐私说明　业务边界　联系我们</div></footer>
+  <div class="toast" id="toast"></div>
+  <script>
+    const data=[
+      {name:'沪铜',spec:'1#电解铜',cat:'有色金属',region:'上海',unit:'元/吨',spot:79240,chg:180,code:'CU2609',future:79160,basis:80,bchg:35,alert:true,trend:[58,66,62,71,74,77,80]},
+      {name:'热轧板卷',spec:'4.75mm',cat:'黑色金属',region:'上海',unit:'元/吨',spot:3260,chg:0,code:'HC2610',future:3251,basis:9,bchg:-18,alert:true,trend:[28,22,31,24,18,14,9]},
+      {name:'螺纹钢',spec:'HRB400E Φ18',cat:'黑色金属',region:'杭州',unit:'元/吨',spot:3030,chg:-10,code:'RB2610',future:3016,basis:14,bchg:-14,alert:true,trend:[36,32,26,29,21,18,14]},
+      {name:'电解铝',spec:'A00',cat:'有色金属',region:'上海',unit:'元/吨',spot:20180,chg:60,code:'AL2609',future:20210,basis:-30,bchg:12,alert:false,trend:[-52,-44,-48,-39,-36,-34,-30]},
+      {name:'豆粕',spec:'43%蛋白',cat:'农产品',region:'张家港',unit:'元/吨',spot:3148,chg:8,code:'M2609',future:3166,basis:-18,bchg:6,alert:false,trend:[-32,-28,-25,-31,-26,-21,-18]},
+      {name:'原油',spec:'胜利原油',cat:'能源化工',region:'山东',unit:'元/桶',spot:612.8,chg:2.6,code:'SC2610',future:609.2,basis:3.6,bchg:1.2,alert:true,trend:[1.4,1.9,1.7,2.5,2.8,3.1,3.6]}
+    ];
+    let selected=0;
+    const fmt=n=>Number(n).toLocaleString('zh-CN',{maximumFractionDigits:1});
+    const signed=n=>(n>0?'+':'')+fmt(n);
+    const tone=n=>n>0?'up':n<0?'down':'';
+    function spark(values){const min=Math.min(...values),max=Math.max(...values),span=max-min||1;const points=values.map((v,i)=>`${i*10+4},${21-(v-min)/span*17}`).join(' ');return `<svg class="spark" viewBox="0 0 70 24"><line x1="2" y1="21" x2="68" y2="21"/><polyline points="${points}"/></svg>`}
+    function compare(item){document.querySelector('#spot-price').textContent=fmt(item.spot);document.querySelector('#spot-change').textContent='较昨日 '+signed(item.chg);document.querySelector('#basis-value').textContent=signed(item.basis);document.querySelector('#basis-change').textContent='日变化 '+signed(item.bchg);document.querySelector('#futures-label').textContent=item.code+' 主力期货';document.querySelector('#futures-price').textContent=fmt(item.future);document.querySelector('#compare-name').textContent=item.name+' · '+item.spec;document.querySelector('#compare-region').textContent=item.region+' · '+item.unit}
+    function render(){const q=document.querySelector('#search').value.trim().toLowerCase(),cat=document.querySelector('#category').value,region=document.querySelector('#region').value,only=document.querySelector('#alert-only').checked;const list=data.filter(x=>(!q||(x.name+x.spec+x.code).toLowerCase().includes(q))&&(cat==='全部板块'||x.cat===cat)&&(region==='全部地区'||x.region===region)&&(!only||x.alert));document.querySelector('#rows').innerHTML=list.length?list.map((x)=>{const i=data.indexOf(x);return `<tr data-i="${i}" class="${i===selected?'selected':''}"><td><div class="product"><i>${x.name.slice(0,1)}</i><div><b>${x.name}</b><small>${x.spec} · ${x.region}</small></div></div></td><td class="num">${fmt(x.spot)}</td><td class="${tone(x.chg)}">${signed(x.chg)}</td><td class="contract">${x.code}</td><td class="num">${fmt(x.future)}</td><td class="${tone(x.basis)}">${signed(x.basis)}</td><td class="${tone(x.bchg)}">${signed(x.bchg)}</td><td>${spark(x.trend)}</td><td><button class="alert ${x.alert?'on':''}" data-alert="${i}">${x.alert?'已设置':'设置提醒'}</button></td></tr>`}).join(''):'<tr><td colspan="9" style="text-align:center;padding:42px;color:#8994a5">没有符合筛选条件的关注品种</td></tr>'}
+    document.addEventListener('click',e=>{const alert=e.target.closest('[data-alert]');if(alert){e.stopPropagation();const i=Number(alert.dataset.alert);data[i].alert=!data[i].alert;render();toast(data[i].alert?'已设置 '+data[i].name+' 基差提醒':'已取消 '+data[i].name+' 提醒');return}const row=e.target.closest('tr[data-i]');if(row){selected=Number(row.dataset.i);compare(data[selected]);render();window.scrollTo({top:105,behavior:'smooth'})}});
+    ['search','category','region','alert-only'].forEach(id=>document.querySelector('#'+id).addEventListener(id==='search'?'input':'change',render));
+    document.querySelector('#manage').onclick=()=>toast('可在表格中直接设置或取消品种提醒');
+    function toast(text){const t=document.querySelector('#toast');t.textContent=text;t.classList.add('show');clearTimeout(t.timer);t.timer=setTimeout(()=>t.classList.remove('show'),1800)}
+    compare(data[0]);render();
+  </script>
+</body>
+</html>

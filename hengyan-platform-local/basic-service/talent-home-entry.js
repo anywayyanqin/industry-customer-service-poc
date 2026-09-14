@@ -1,0 +1,1 @@
+(()=>{const head=document.querySelector('#talent .category-head');if(head&&!head.querySelector('[data-talent-home]'))head.insertAdjacentHTML('beforeend','<button data-talent-home data-link="service-hubs.html#talent" style="margin-left:auto;border:1px solid #9fb9da;background:#fff;color:#075fe6;padding:8px 14px;cursor:pointer">进入人才服务中心　›</button>')})();
