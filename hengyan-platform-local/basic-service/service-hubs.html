@@ -1,6 +1,141 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>基础服务中心｜产业服务平台</title><style>body.activity-center-mode .hero .tabs{display:flex!important}
-:root{--b:#075fe6;--n:#173f70;--i:#172b45;--m:#697b91;--l:#dce5ef;--bg:#f3f6fa}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--i);font:14px/1.65 "Microsoft YaHei",sans-serif}button,input,select,textarea{font:inherit}.top{height:34px;background:#fff;border-bottom:1px solid #e7ebf0;padding:0 5vw;color:#78889b;display:flex;align-items:center;justify-content:space-between}.header{height:72px;background:#fff;border-bottom:1px solid var(--l);padding:0 5vw;display:flex;align-items:center}.logo{display:flex;gap:10px;align-items:center}.mark{background:var(--b);color:#fff;padding:9px 7px}.logo b{font-size:19px}.logo em{font-style:normal;background:#edf4ff;color:var(--b);padding:3px 7px}.header nav{display:flex;gap:26px;margin-left:55px;height:100%}.header nav a{display:flex;align-items:center;color:#34465b;text-decoration:none}.header nav a.active{color:var(--b);border-bottom:3px solid var(--b);font-weight:700}.work{margin-left:auto;border:0;background:var(--b);color:#fff;padding:12px 20px}.crumb,main{width:calc(100% - 64px);max-width:1360px;margin:auto}.crumb{display:flex;gap:9px;align-items:center;padding:16px 0;color:#75869a}.crumb button{border:0;background:none;color:var(--b);cursor:pointer}.crumb .home{margin-left:auto;border:1px solid #b9cae0;padding:6px 10px;background:#fff}.hero{padding:31px 36px;background:linear-gradient(120deg,#075fe6,#3988ec 72%,#83bdf3);color:#fff}.hero h1{font-size:29px;margin:7px 0}.hero p{max-width:780px;color:#eaf3ff}.tabs{display:flex;gap:7px;margin-top:18px}.tabs button{border:1px solid rgba(255,255,255,.5);background:rgba(255,255,255,.1);color:#fff;padding:8px 14px;cursor:pointer}.tabs button.active{background:#fff;color:var(--b)}.panel{margin-top:17px;background:#fff;border:1px solid var(--l);padding:25px 28px}.head{display:flex;align-items:end;justify-content:space-between;border-bottom:1px solid #e5ebf2;padding-bottom:13px}.head h2{margin:0}.head p{margin:4px 0 0;color:var(--m)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:17px}.card{border:1px solid var(--l);padding:20px;background:#fff;cursor:pointer}.card:hover{border-color:#7fa7dc;box-shadow:0 7px 19px rgba(37,76,126,.08)}.card small{color:var(--b)}.card h3{margin:10px 0 6px}.card p{color:var(--m);min-height:48px}.card-meta{display:flex;justify-content:space-between;padding-top:11px;border-top:1px solid #e8edf3;color:#78899d}.card button{border:0;background:none;color:var(--b);cursor:pointer}.expert{display:grid;grid-template-columns:62px 1fr;gap:13px}.avatar{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#dfeaff,#bdd7ff);color:var(--b);font-weight:700}.detail{display:none}.detail.active{display:block}.detail-layout{display:grid;grid-template-columns:1fr 360px;gap:16px;margin-top:17px}.detail-main,.detail-side{background:#fff;border:1px solid var(--l);padding:27px}.detail-main h1{margin-top:5px}.detail-main p{color:#566d86}.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:18px 0}.facts div{padding:13px;background:#f4f7fb}.facts b,.facts span{display:block}.facts span{font-size:12px;color:var(--m)}.agenda{border-top:1px solid var(--l)}.agenda div{display:grid;grid-template-columns:90px 1fr;padding:12px 3px;border-bottom:1px solid #e8edf3}.primary{border:0;background:var(--b);color:#fff;padding:10px 17px;cursor:pointer}.secondary{border:1px solid #a9bfdc;background:#fff;color:var(--b);padding:9px 16px;cursor:pointer}.form{display:grid;gap:13px}.field label{display:block;margin-bottom:5px;color:#52677f}.field input,.field select,.field textarea{width:100%;border:1px solid #cfdbe8;padding:10px}.field textarea{min-height:90px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.notice{padding:12px;background:#fff7e8;border:1px solid #f0dab1;color:#7b5b23}.toast{position:fixed;left:50%;bottom:25px;transform:translate(-50%,20px);opacity:0;background:#173f70;color:#fff;padding:10px 16px;transition:.2s}.toast.show{opacity:1;transform:translate(-50%,0)}@media(max-width:900px){.header nav{display:none}.cards,.detail-layout,.facts,.form-row{grid-template-columns:1fr}.crumb,main{width:calc(100% - 28px)}}
-</style></head><body><div class="top"><span>国泰君安期货　市场洞察　业务办理　活动中心</span><span>服务热线 400-800-2026</span></div><header class="header"><div class="logo"><span class="mark">国泰</span><b>产业服务平台</b><em>产业版</em></div><nav><a href="#">首页</a><a href="#">产业咨询</a><a class="active" href="#">基础服务</a><a href="#">智能交易</a><a href="#">投研支持</a></nav><button class="work" data-go="index.html?v=20260821-31#workbench">我的工作台</button></header><div class="crumb"><button data-go="basic-service-home.html">基础服务</button><span>/</span><b id="crumb-name"></b><button class="home" data-go="basic-service-home.html">← 返回基础服务首页</button></div><main><section class="hero"><small id="hero-kicker"></small><h1 id="hero-title"></h1><p id="hero-desc"></p><div class="tabs" id="tabs"></div></section><section class="panel" id="hub"><div class="head"><div><h2 id="list-title"></h2><p id="list-desc"></p></div><span id="list-count"></span></div><div class="cards" id="cards"></div></section><section class="detail" id="detail"><div class="detail-layout"><article class="detail-main"><button class="secondary" data-back>‹ 返回列表</button><h1 id="detail-title"></h1><p id="detail-desc"></p><div class="facts" id="facts"></div><h2 id="detail-section-title"></h2><div class="agenda" id="agenda"></div></article><aside class="detail-side"><h2 id="action-title"></h2><div class="notice" id="action-tip"></div><form class="form" id="apply-form"><div class="form-row"><div class="field"><label>企业名称</label><input required value="华辰产业有限公司"></div><div class="field"><label>联系人</label><input required value="华经理"></div></div><div class="form-row"><div class="field"><label>联系电话</label><input required value="138****2026"></div><div class="field"><label id="choice-label">参与人数</label><select><option>1 人</option><option>2—5 人</option><option>6—10 人</option><option>10 人以上</option></select></div></div><div class="field"><label>需求说明</label><textarea id="demand" required placeholder="请说明参与目的或服务需求"></textarea></div><button class="primary" type="submit">确认提交</button></form></aside></div></section></main><div class="toast" id="toast"></div><script>
-const activity=[{id:'policy-live',type:'政策直播',title:'监管政策解读及企业合规专题直播',desc:'围绕监管要求、业务适用边界与企业合规重点开展线上解读。',date:'2026-08-26 14:00',place:'线上直播',facts:[['形式','线上直播'],['时长','90 分钟'],['状态','开放预约']],agenda:['监管规则变化概览','产业企业适用边界','内部制度与行动清单','在线问答']},{id:'industry-research',type:'行业调研',title:'重点产业链企业调研与信息分享',desc:'通过企业走访、专题座谈和调研纪要沉淀产业观察与经营信息。',date:'2026-09-18 全天',place:'华东地区',facts:[['形式','企业走访'],['规模','限 30 人'],['状态','征集报名']],agenda:['产业链运行情况交流','重点企业现场走访','经营风险与需求座谈','调研纪要与信息分享']},{id:'industry-salon',type:'沙龙峰会',title:'产业风险管理实践与工具应用沙龙',desc:'邀请产业企业、研究团队与业务专家分享风险管理实践和工具应用经验。',date:'2026-09-05 13:30',place:'上海',facts:[['形式','线下沙龙'],['规模','限 80 人'],['状态','开放报名']],agenda:['产业形势主题分享','企业风险管理案例','衍生工具应用讨论','自由交流']}];const talent=[{id:'talent-demand',type:'人才需求',title:'专业人才输送',desc:'登记企业风险管理、交易、风控及财务相关岗位需求，形成岗位画像并开展资源匹配。',facts:[['服务方式','需求申请'],['响应时间','2 个工作日'],['状态','开放申请']],agenda:['岗位职责与专业方向','经验、资质与人数要求','工作地点与到岗计划','候选资源匹配与沟通']},{id:'exchange-internship',type:'交流实践',title:'双向人员交流或实习',desc:'支持企业人员交流、专业团队实践及产业实习意向登记。',facts:[['服务方式','意向申请'],['周期','按项目确认'],['状态','开放申请']],agenda:['交流目标与参与对象','交流周期和实践内容','双方职责与保障条件','成果评价与后续安排']},{id:'expert-pool',type:'专家资源',title:'外部专家资源库',desc:'按产业领域、专业能力和服务经历浏览专家资源，并提交咨询或交流需求。',facts:[['资源类型','产业与专业专家'],['服务方式','预约对接'],['状态','持续更新']],agenda:['能源化工｜周明远｜产业研究与风险管理','有色金属｜李嘉禾｜套期保值与基差贸易','农产品｜王若琳｜产业链研究与期权应用','财务会计｜陈思远｜套期会计与信息披露']}];let mode=location.hash.includes('talent')?'talent':'activity',items=mode==='activity'?activity:talent,active=items[0];const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];function setup(){const isA=mode==='activity';$('#crumb-name').textContent=$('#hero-title').textContent=isA?'活动与调研中心':'人才服务中心';$('#hero-kicker').textContent='基础服务 · '+(isA?'活动与调研':'人才服务');$('#hero-desc').textContent=isA?'汇集政策直播、产业调研、沙龙与峰会活动，支持分类浏览、查看详情和在线报名。':'围绕产业企业人才需求、交流实践和专家资源，提供统一的信息浏览与需求申请入口。';$('#tabs').innerHTML=(isA?['全部活动','政策直播','行业调研','沙龙峰会']:['全部服务','人才需求','交流实践','专家资源']).map((x,i)=>`<button class="${i===0?'active':''}" data-filter="${i}">${x}</button>`).join('');$('#list-title').textContent=isA?'近期活动':'人才服务项目';$('#list-desc').textContent=isA?'选择活动查看议程、时间地点并提交报名。':'选择服务查看办理内容并提交需求。';render(items)}function render(list){$('#list-count').textContent=list.length+' 项';$('#cards').innerHTML=list.map(x=>`<article class="card" data-item="${x.id}">${mode==='talent'&&x.id==='expert-pool'?'<div class="expert"><div class="avatar">专家</div><div>':''}<small>${x.type}</small><h3>${x.title}</h3><p>${x.desc}</p><div class="card-meta"><span>${x.date||x.facts[0][1]}</span><button>查看详情　›</button></div>${mode==='talent'&&x.id==='expert-pool'?'</div></div>':''}</article>`).join('')}function openItem(id){active=items.find(x=>x.id===id);$('#hub').hidden=true;$('#detail').classList.add('active');$('#detail-title').textContent=active.title;$('#detail-desc').textContent=active.desc;$('#facts').innerHTML=active.facts.map(x=>`<div><b>${x[1]}</b><span>${x[0]}</span></div>`).join('');$('#detail-section-title').textContent=active.id==='expert-pool'?'专家列表':mode==='activity'?'活动安排':'服务内容';$('#agenda').innerHTML=active.agenda.map((x,i)=>`<div><b>${String(i+1).padStart(2,'0')}</b><span>${x}</span></div>`).join('');$('#action-title').textContent=active.id==='expert-pool'?'预约专家服务':mode==='activity'?'活动报名':'提交服务需求';$('#action-tip').textContent=mode==='activity'?'报名后可在“我的工作台”查看活动信息。':'提交后可在“我的工作台”查看需求记录与后续进展。';$('#demand').placeholder=active.id==='expert-pool'?'请说明希望咨询的领域、问题及期望专家':'请说明参与目的或服务需求';scrollTo(0,0)}function note(t){const e=$('#toast');e.textContent=t;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),1600)}setup();document.addEventListener('click',e=>{const go=e.target.closest('[data-go]')?.dataset.go;if(go)location.href=go;const id=e.target.closest('[data-item]')?.dataset.item;if(id)openItem(id);if(e.target.closest('[data-back]')){$('#detail').classList.remove('active');$('#hub').hidden=false;scrollTo(0,0)}const f=e.target.closest('[data-filter]')?.dataset.filter;if(f!==undefined){$$('[data-filter]').forEach(b=>b.classList.toggle('active',b===e.target.closest('[data-filter]')));const idx=Number(f);render(idx===0?items:items.filter(x=>x.type.includes((mode==='activity'?['','政策','调研','沙龙'][idx]:['','人才','交流','专家'][idx]))))}});$('#apply-form').onsubmit=e=>{e.preventDefault();const key=mode==='activity'?'basicServiceActivities':'basicServiceTalent',record={id:active.id+'-'+Date.now(),serviceId:active.id,title:active.title,type:active.type,status:'已提交',time:new Date().toLocaleString('zh-CN'),url:'service-hubs.html#'+mode};let list=[];try{list=JSON.parse(localStorage.getItem(key)||'[]')}catch{};list.unshift(record);localStorage.setItem(key,JSON.stringify(list));note('提交成功，已进入我的工作台');setTimeout(()=>location.href='index.html?v=20260821-31#workbench',700)};
-</script><script src="service-hub-mode-router.js?v=20260821-1"></script><script src="activity-category-page.js?v=20260821-2"></script><script src="activity-hero-category-nav.js?v=20260821-1"></script><script src="activity-center-enhancement.js?v=20260821-3"></script><script src="activity-recent-static.js?v=20260821-1"></script><script src="activity-all-filter.js?v=20260821-1"></script><script src="talent-center-enhancement.js?v=20260821-1"></script><script src="talent-center-v2.js?v=20260824-4"></script><script src="talent-detail-v2.js?v=20260821-5"></script><script>document.addEventListener('click',e=>{const card=e.target.closest('[data-item]');if(card&&location.hash.includes('activity')){e.preventDefault();e.stopImmediatePropagation();location.href='activity-detail.html?id='+card.dataset.item}},true);</script><script src="service-navigation.js?v=20260824-2"></script><script src="service-center-nav.js?v=20260821-1"></script></body></html>
-</script><script src="service-hub-mode-router.js?v=20260821-1"></script><script src="activity-category-page.js?v=20260821-2"></script><script src="activity-hero-category-nav.js?v=20260821-1"></script><script src="activity-center-enhancement.js?v=20260821-3"></script><script src="activity-recent-static.js?v=20260821-1"></script><script src="activity-all-filter.js?v=20260821-1"></script><script src="talent-center-enhancement.js?v=20260821-1"></script><script src="talent-center-v2.js?v=20260821-1"></script><script src="talent-detail-v2.js?v=20260821-5"></script><script>document.addEventListener('click',e=>{const card=e.target.closest('[data-item]');if(card&&location.hash.includes('activity')){e.preventDefault();e.stopImmediatePropagation();location.href='activity-detail.html?id='+card.dataset.item}},true);</script><script src="service-navigation.js?v=20260821-5"></script><script src="service-center-nav.js?v=20260821-1"></script><script src="/login-phone-prefill.js?v=2"></script></body></html>
+:root{--b:#075fe6;--n:#173f70;--i:#172b45;--m:#697b91;--l:#dce5ef;--bg:#f3f6fa}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--i);font:14px/1.65 "Microsoft YaHei",sans-serif}button,input,select,textarea{font:inherit}.top{height:34px;background:#fff;border-bottom:1px solid #e7ebf0;padding:0 5vw;color:#78889b;display:flex;align-items:center;justify-content:space-between}.header{height:72px;background:#fff;border-bottom:1px solid var(--l);padding:0 5vw;display:flex;align-items:center}.logo{display:flex;gap:10px;align-items:center}.mark{background:var(--b);color:#fff;padding:9px 7px}.logo b{font-size:19px}.logo em{font-style:normal;background:#edf4ff;color:var(--b);padding:3px 7px}.header nav{display:flex;gap:26px;margin-left:55px;height:100%}.header nav a{display:flex;align-items:center;color:#34465b;text-decoration:none}.header nav a.active{color:var(--b);border-bottom:3px solid var(--b);font-weight:700}.work{margin-left:auto;border:0;background:var(--b);color:#fff;padding:12px 20px}.crumb,main{width:calc(100% - 64px);max-width:1360px;margin:auto}.crumb{display:flex;gap:9px;align-items:center;padding:16px 0;color:#75869a}.crumb button{border:0;padding:0;background:none;color:var(--b);cursor:pointer;font:inherit}.hero{padding:31px 36px;background:linear-gradient(120deg,#075fe6,#3988ec 72%,#83bdf3);color:#fff}.hero h1{font-size:29px;margin:7px 0}.hero p{max-width:780px;color:#eaf3ff}.tabs{display:flex;gap:7px;margin-top:18px}.tabs button{border:1px solid rgba(255,255,255,.5);background:rgba(255,255,255,.1);color:#fff;padding:8px 14px;cursor:pointer}.tabs button.active{background:#fff;color:var(--b)}.panel{margin-top:17px;background:#fff;border:1px solid var(--l);padding:25px 28px}.detail{display:none}.detail.active{display:block}.detail-layout{display:grid;grid-template-columns:1fr 360px;gap:16px;margin-top:17px}.detail-main,.detail-side{background:#fff;border:1px solid var(--l);padding:27px}.detail-main h1{margin-top:5px}.detail-main p{color:#566d86}.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:18px 0}.facts div{padding:13px;background:#f4f7fb}.facts b,.facts span{display:block}.facts span{font-size:12px;color:var(--m)}.agenda{border-top:1px solid var(--l)}.agenda div{display:grid;grid-template-columns:90px 1fr;padding:12px 3px;border-bottom:1px solid #e8edf3}.primary{border:0;background:var(--b);color:#fff;padding:10px 17px;cursor:pointer}.secondary{border:1px solid #a9bfdc;background:#fff;color:var(--b);padding:9px 16px;cursor:pointer}.form{display:grid;gap:13px}.field label{display:block;margin-bottom:5px;color:#52677f}.field input,.field select,.field textarea{width:100%;border:1px solid #cfdbe8;padding:10px}.field textarea{min-height:90px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.notice{padding:12px;background:#fff7e8;border:1px solid #f0dab1;color:#7b5b23}.toast{position:fixed;left:50%;bottom:25px;transform:translate(-50%,20px);opacity:0;background:#173f70;color:#fff;padding:10px 16px;transition:.2s}.toast.show{opacity:1;transform:translate(-50%,0)}@media(max-width:900px){.header nav{display:none}.detail-layout,.facts,.form-row{grid-template-columns:1fr}.crumb,main{width:calc(100% - 28px)}}
+</style></head><body><div class="top"><span>国泰君安期货　市场洞察　业务办理　活动中心</span><span>服务热线 400-800-2026</span></div><header class="header"><div class="logo"><span class="mark">国泰</span><b>产业服务平台</b><em>产业版</em></div><nav><a href="#">首页</a><a href="#">产业咨询</a><a class="active" href="#">基础服务</a><a href="#">智能交易</a><a href="#">投研支持</a></nav><button class="work" data-go="index.html?v=20260821-31#workbench">我的工作台</button></header><div class="crumb"><button data-go="basic-service-home.html">基础服务</button><span>/</span><b id="crumb-name"></b></div><main><section class="hero hero--hub"><h1 id="hero-title"></h1><div class="tabs" id="tabs"></div></section><section class="panel" id="hub"></section><section class="detail" id="detail"><div class="detail-layout"><article class="detail-main"><button class="secondary" data-back>‹ 返回列表</button><h1 id="detail-title"></h1><p id="detail-desc"></p><div class="facts" id="facts"></div><h2 id="detail-section-title"></h2><div class="agenda" id="agenda"></div></article><aside class="detail-side"><h2 id="action-title"></h2><div class="notice" id="action-tip"></div><form class="form" id="apply-form"><div class="form-row"><div class="field"><label for="expert-company">企业名称</label><input id="expert-company" name="company" required></div><div class="field"><label for="expert-contact">联系人</label><input id="expert-contact" name="contact" required></div></div><div class="form-row"><div class="field"><label for="expert-phone">联系电话</label><input id="expert-phone" name="phone" type="tel" required></div><div class="field"><label for="expert-people" id="choice-label">参与人数</label><select id="expert-people" name="people"><option>1 人</option><option>2—5 人</option><option>6—10 人</option><option>10 人以上</option></select></div></div><div class="field"><label for="demand">需求说明</label><textarea id="demand" name="demand" required placeholder="请说明希望咨询的问题及期望时间"></textarea></div><div class="actions"><button class="secondary" type="button" id="expert-save">保存草稿</button><button class="primary" type="submit">确认提交</button></div></form></aside></div></section></main><div class="toast" id="toast"></div><script>
+const activity=[{id:'policy-live',type:'政策直播',title:'监管政策解读及企业合规专题直播',desc:'围绕监管要求、业务适用边界与企业合规重点开展线上解读。',date:'2026-08-26 14:00',place:'线上直播',facts:[['形式','线上直播'],['时长','90 分钟'],['状态','开放预约']],agenda:['监管规则变化概览','产业企业适用边界','内部制度与行动清单','在线问答']},{id:'industry-research',type:'行业调研',title:'重点产业链企业调研与信息分享',desc:'通过企业走访、专题座谈和调研纪要沉淀产业观察与经营信息。',date:'2026-09-18 全天',place:'华东地区',facts:[['形式','企业走访'],['规模','限 30 人'],['状态','征集报名']],agenda:['产业链运行情况交流','重点企业现场走访','经营风险与需求座谈','调研纪要与信息分享']},{id:'industry-salon',type:'沙龙峰会',title:'产业风险管理实践与工具应用沙龙',desc:'邀请产业企业、研究团队与业务专家分享风险管理实践和工具应用经验。',date:'2026-09-05 13:30',place:'上海',facts:[['形式','线下沙龙'],['规模','限 80 人'],['状态','开放报名']],agenda:['产业形势主题分享','企业风险管理案例','衍生工具应用讨论','自由交流']}];const talent=[{id:'talent-demand',type:'人才需求',title:'专业人才输送',desc:'登记企业风险管理、交易、风控及财务相关岗位需求，形成岗位画像并开展资源匹配。',facts:[['服务方式','需求申请'],['响应时间','2 个工作日'],['状态','开放申请']],agenda:['岗位职责与专业方向','经验、资质与人数要求','工作地点与到岗计划','候选资源匹配与沟通']},{id:'exchange-internship',type:'交流实践',title:'双向人员交流或实习',desc:'支持企业人员交流、专业团队实践及产业实习意向登记。',facts:[['服务方式','意向申请'],['周期','按项目确认'],['状态','开放申请']],agenda:['交流目标与参与对象','交流周期和实践内容','双方职责与保障条件','成果评价与后续安排']},{id:'expert-pool',type:'专家资源',title:'外部专家资源库',desc:'按产业领域、专业能力和服务经历浏览专家资源，并提交咨询或交流需求。',facts:[['资源类型','产业与专业专家'],['服务方式','预约对接'],['状态','持续更新']],agenda:['能源化工｜周明远｜产业研究与风险管理','有色金属｜李嘉禾｜套期保值与基差贸易','农产品｜王若琳｜产业链研究与期权应用','财务会计｜陈思远｜套期会计与信息披露']}];
+const mode = location.hash.includes('talent') ? 'talent' : 'activity';
+const items = mode === 'activity' ? activity : talent;
+let active = items[0];
+const $ = selector => document.querySelector(selector);
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, character => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[character]));
+}
+function setHubBreadcrumb(title = '') {
+  const center = mode === 'activity' ? '活动与调研中心' : '人才服务中心';
+  $('.crumb').innerHTML = `<button data-go="basic-service-home.html">基础服务</button><span>/</span>${title ? `<button data-back>${center}</button><span>/</span>` : ''}<b id="crumb-name">${escapeHTML(title || center)}</b>`;
+}
+function setup() {
+  if (!location.hash) {
+    const url = new URL(location.href);
+    url.hash = mode;
+    history.replaceState(null, '', url);
+  }
+  $('#hero-title').textContent = mode === 'activity' ? '活动与调研中心' : '人才服务中心';
+  setHubBreadcrumb();
+  if (mode === 'activity') {
+    $('#tabs').innerHTML = ['全部活动', '政策直播', '行业调研', '沙龙峰会'].map((title, index) => `<button type="button" class="${index === 0 ? 'active' : ''}" data-filter="${index}">${title}</button>`).join('');
+  } else {
+    $('#tabs').remove();
+  }
+}
+function openItem(id, options = {}) {
+  const item = items.find(entry => entry.id === id);
+  if (!item) return;
+  active = item;
+  document.body.classList.remove('talent-detail-view');
+  $('#detail .talent-detail-explanation')?.remove();
+  $('#agenda').classList.remove('talent-expert-list');
+  $('#hub').hidden = true;
+  $('#detail').classList.add('active');
+  $('#detail-title').textContent = active.title;
+  $('#detail-desc').textContent = active.desc;
+  $('#facts').innerHTML = active.facts.map(fact => `<div><b>${escapeHTML(fact[1])}</b><span>${escapeHTML(fact[0])}</span></div>`).join('');
+  $('#detail-section-title').textContent = active.id === 'expert-pool' ? '专家列表' : mode === 'activity' ? '活动安排' : '服务内容';
+  $('#agenda').innerHTML = active.agenda.map((entry, index) => `<div><b>${String(index + 1).padStart(2, '0')}</b><span>${escapeHTML(entry)}</span></div>`).join('');
+  $('#action-title').textContent = active.id === 'expert-pool' ? '预约专家服务' : mode === 'activity' ? '活动报名' : '提交服务需求';
+  $('#action-tip').textContent = mode === 'activity' ? '报名后可在“我的工作台”查看活动信息。' : '提交后可在“我的工作台”查看需求记录与后续进展。';
+  $('#demand').placeholder = active.id === 'expert-pool' ? '请说明希望咨询的领域、问题及期望时间' : '请说明参与目的或服务需求';
+  setHubBreadcrumb(active.title);
+  document.dispatchEvent(new CustomEvent('hub:item-open', {detail: {serviceId: id, expertId: options.expertId || ''}}));
+  scrollTo(0, 0);
+}
+function closeItem(updateUrl = true) {
+  document.body.classList.remove('talent-detail-view');
+  $('#detail').classList.remove('active');
+  $('#detail .talent-detail-explanation')?.remove();
+  $('#hub').hidden = false;
+  if (mode === 'talent' && updateUrl) {
+    const url = new URL(location.href);
+    url.searchParams.delete('service');
+    url.searchParams.delete('expert');
+    url.hash = 'talent';
+    history.replaceState(null, '', url);
+  }
+  setHubBreadcrumb();
+  scrollTo(0, 0);
+}
+function note(text) {
+  const toast = $('#toast');
+  toast.textContent = text;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 1600);
+}
+setup();
+document.addEventListener('click', event => {
+  const go = event.target.closest('[data-go]')?.dataset.go;
+  if (go) location.href = go;
+  const id = event.target.closest('[data-item]')?.dataset.item;
+  if (id) {
+    if (mode === 'activity') location.href = 'activity-detail.html?id=' + encodeURIComponent(id);
+    else openItem(id);
+  }
+  if (event.target.closest('[data-back]')) closeItem();
+});
+function expertDraftKey() { return 'basicServiceExpertDraft-' + (window.talentCenter?.getSelectedExpert()?.id || ''); }
+$('#expert-save').onclick = () => {
+  localStorage.setItem(expertDraftKey(), JSON.stringify(Object.fromEntries(new FormData($('#apply-form')))));
+  note('草稿已保存');
+};
+document.addEventListener('hub:item-open', event => {
+  if (!event.detail.expertId) return;
+  const form = $('#apply-form');
+  form.reset();
+  try {
+    const saved = JSON.parse(localStorage.getItem('basicServiceExpertDraft-' + event.detail.expertId) || '{}');
+    ['company', 'contact', 'phone', 'people', 'demand'].forEach(name => {
+      if (typeof saved[name] === 'string') form.elements[name].value = saved[name];
+    });
+  } catch {}
+});
+$('#apply-form').onsubmit = event => {
+  event.preventDefault();
+  if (!event.currentTarget.reportValidity()) return;
+  const expert = active.id === 'expert-pool' ? window.talentCenter?.getSelectedExpert() : null;
+  if (active.id === 'expert-pool' && !expert) {
+    note('请先选择专家，再预约咨询');
+    return;
+  }
+  const key = mode === 'activity' ? 'basicServiceActivities' : 'basicServiceTalent';
+  const record = {
+    id: active.id + '-' + Date.now(), serviceId: active.id,
+    title: active.title + (expert ? ' · ' + expert.name : ''), type: active.type,
+    status: '已提交', time: new Date().toLocaleString('zh-CN'),
+    detail: Object.fromEntries(new FormData(event.currentTarget)),
+    url: expert ? window.talentCenter.applicationUrl(expert) : mode === 'talent' ? 'service-hubs.html?service=' + encodeURIComponent(active.id) + '#talent' : 'service-hubs.html#activity'
+  };
+  if (expert) { record.expertId = expert.id; record.expertName = expert.name; }
+  try {
+    const records = JSON.parse(localStorage.getItem(key) || '[]');
+    if (!Array.isArray(records)) throw new Error('Invalid records');
+    records.unshift(record);
+    localStorage.setItem(key, JSON.stringify(records));
+  } catch {
+    note('记录保存失败，请稍后重试；已填写内容仍保留');
+    return;
+  }
+  localStorage.removeItem(expertDraftKey());
+  if (new URLSearchParams(location.search).get('applicationEmbed') === '1' && window.parent.BasicServiceDrawer) {
+    window.parent.BasicServiceDrawer.complete();
+    return;
+  }
+  note('提交成功，已进入我的工作台');
+  setTimeout(() => location.href = 'index.html?v=20260821-31#workbench', 700);
+};
+</script>
+<script src="service-hub-mode-router.js?v=20260821-1"></script>
+<script src="activity-center-enhancement.js?v=20260918-8"></script>
+<script src="activity-hero-category-nav.js?v=20260918-4"></script>
+<script src="talent-center-enhancement.js?v=20260918-8"></script>
+<script src="talent-detail-v2.js?v=20260918-8"></script>
+<script src="service-navigation.js?v=20260918-6"></script>
+<script src="service-center-nav.js?v=20260821-1"></script>
+</body></html>

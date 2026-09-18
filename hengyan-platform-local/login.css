@@ -1,0 +1,49 @@
+.platform-login{position:fixed;inset:0;z-index:10000;overflow:auto;background:#f5f7fb;color:#202a4c;font:14px/1.6 "Microsoft YaHei",sans-serif}
+body.login-open{overflow:hidden}
+body.login-open > :not(.platform-login):not(script):not(style):not(link){display:none!important}
+.platform-login[hidden]{display:none}
+.platform-login h2{font-weight:650}
+.login-field > span{display:flex;align-items:center}
+.platform-login *{box-sizing:border-box}
+.platform-login button,.platform-login input{font:inherit}
+.platform-login button{cursor:pointer}
+.login-header{height:86px;max-width:1320px;margin:auto;padding:0 48px;display:flex;align-items:center;gap:20px}
+.login-brand{font-size:23px;font-weight:750;letter-spacing:2px;color:#163874}
+.login-brand-caption{padding-left:20px;border-left:1px solid #cdd5e3;color:#68748b}
+.login-layout{max-width:1320px;min-height:calc(100dvh - 146px);margin:auto;padding:30px 48px 50px;display:grid;grid-template-columns:1.15fr 1fr;align-items:center;gap:70px}
+.login-promo{padding:30px 0 30px 20px;border-left:3px solid #d4e2f9}
+.login-promo h1{font-size:clamp(36px,4vw,56px);line-height:1.5;letter-spacing:3px;margin:0 0 22px;font-weight:700;color:#182e58}
+.login-promo h1 span{color:#235bcb}
+.login-promo>p{font-size:15px;line-height:1.8;color:#718098;margin:0}
+.login-card{background:#fff;border:1px solid #e9edf4;border-radius:16px;box-shadow:0 20px 70px #223f7810;width:100%;max-width:480px;justify-self:end;overflow:hidden}
+.login-card h2{font-size:24px;text-align:center;letter-spacing:1px;padding:26px 12px;margin:0;border-bottom:1px solid #e9eaf0}
+.login-card-body{padding:24px 38px 30px;min-height:386px}
+.login-tabs{display:flex;justify-content:center;gap:38px;margin:0 0 27px}
+.login-tabs button{background:none;border:0;color:#82899f;font-size:16px;font-weight:600;padding:0 0 10px;position:relative}
+.login-tabs button[aria-selected=true]{color:#202a4c}
+.login-tabs button[aria-selected=true]:after{content:'';position:absolute;bottom:0;left:calc(50% - 16px);width:32px;height:2px;background:#3859ff}
+.login-methods{display:flex;background:#f1f2f5;border-radius:7px;padding:3px;margin-bottom:18px}
+.login-methods button{flex:1;border:0;background:none;color:#9095a2;padding:5px 0;position:relative;font-size:13px;border-radius:5px}
+.login-methods button[aria-selected=true]{background:white;color:#252d45;box-shadow:0 1px 4px #0002}
+.login-methods sup{font-size:9px;background:#ff453b;color:#fff;border-radius:3px;padding:1px 3px;margin-left:5px}
+.login-field{display:flex;align-items:center;border:1px solid #e1e4eb;border-radius:4px;margin-bottom:16px;height:44px;padding:0 12px;gap:10px;color:#9ca9bf}
+.login-field:focus-within{border-color:#4569ef;box-shadow:0 0 0 3px #4569ef0c}
+.login-field input{border:0;outline:0;width:100%;min-width:0;background:transparent;color:#263354;padding:0;height:100%}
+.login-field input::placeholder{color:#a2a6af}
+.login-field button{background:none;border:0;color:#8d99b2;white-space:nowrap;padding:0;font-size:12px}
+.login-consent{display:flex;align-items:flex-start;gap:7px;font-size:12px;margin:26px 0 18px;color:#485471}
+.login-consent input{margin:4px 0 0;accent-color:#3859ff;width:15px;height:15px;flex-shrink:0}
+.login-link{color:#4563ff!important;background:none;border:0;padding:0;font-size:inherit}
+.login-recovery{text-align:center;font-size:13px;margin:0 0 22px;color:#b4b9c6}
+.login-recovery span{margin:0 18px}
+.login-submit{width:100%;height:48px;border:0;border-radius:7px;background:#3859ed;color:white;font-weight:600}
+.login-submit:disabled{background:#e0e0e0;color:#a4a4a4;cursor:not-allowed}
+.login-message{font-size:12px;color:#697993;min-height:22px;margin:8px 0 0}
+.login-demo-entry{display:block;margin:15px auto 0;border:0;background:none;color:#8692a7;font-size:12px!important}
+.login-footer{text-align:center;color:#9ba5b7;font-size:12px;padding:12px 20px 20px}
+.login-wechat{height:130px;display:grid;place-content:center;text-align:center;background:#f8fafc;border:1px dashed #dce3ef;border-radius:6px;color:#8b97a9;gap:7px}
+.login-wechat strong{font-size:15px;color:#536783}
+.login-notice{border:0;border-radius:12px;padding:28px;max-width:420px;width:calc(100% - 40px);color:#263354;box-shadow:0 15px 70px #182e5830}
+.login-notice::backdrop{background:#182e5840}.login-notice h3{margin:0 0 14px}.login-notice p{font-size:14px;line-height:1.8}.login-notice button{float:right;border:0;background:#3859ed;color:white;border-radius:5px;padding:8px 22px}
+@media(max-width:900px){.login-layout{gap:30px;padding:24px 32px 40px;grid-template-columns:1fr 1fr}.login-header{padding:0 32px}.login-card-body{padding:24px}.login-tabs{gap:24px}.login-promo h1{font-size:32px}.login-card h2{font-size:21px}}
+@media(max-width:650px){.login-header{height:70px;padding:0 24px}.login-brand{font-size:19px}.login-brand-caption{font-size:12px;padding-left:12px}.login-layout{display:flex;flex-direction:column;gap:20px;padding:10px 22px 25px;min-height:0}.login-promo{width:100%;padding:10px 0;border:0}.login-promo h1{font-size:28px;margin-bottom:8px}.login-promo>p{font-size:13px;margin:0}.login-card{max-width:480px}.login-card-body{min-height:0}.login-footer{font-size:10px}}

@@ -1,0 +1,27 @@
+html.application-drawer-open{overflow:hidden}
+.application-drawer{box-sizing:border-box;position:fixed;inset:0 0 0 auto;width:min(680px,calc(100% - 48px));height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;border-left:1px solid #dce5ef;background:#fff;color:#172b45;box-shadow:-12px 0 40px #1539631a;overflow:hidden;font:14px/1.6 "Microsoft YaHei",sans-serif}
+.application-drawer[open]{display:flex;flex-direction:column}
+.application-drawer::backdrop{background:rgba(20,40,70,.06);backdrop-filter:none}
+.application-drawer.is-fullscreen{width:100%;border-left:0}
+.application-drawer-bar{display:flex;align-items:center;gap:12px;min-height:64px;padding:12px 20px;border-bottom:1px solid #e2e9f1;background:#fff;flex-shrink:0}
+.application-drawer-bar h2{font-size:18px;line-height:1.5;margin:0 auto 0 0;min-width:0}
+.application-drawer-bar button{flex-shrink:0;font:inherit;cursor:pointer;border:1px solid #cfdbeb;border-radius:6px;padding:7px 12px;color:#075fe6;background:#fff}
+.application-drawer-bar [data-drawer-close]{border:0;color:#687b92;font-size:25px;padding:0 8px}
+.application-drawer-bar button:focus-visible{outline:2px solid #075fe6;outline-offset:2px}
+.application-drawer-frame{display:block;border:0;width:100%;flex:1;min-height:0;background:#fff}
+body.application-embedded{margin:0!important;padding:0!important;background:#fff!important}
+.application-embedded .application-form-path{display:block!important;width:100%!important;max-width:none!important;min-height:0!important;height:auto!important;margin:0!important;padding:0!important;border:0!important;box-shadow:none!important;background:#fff!important}
+:is(.application-embedded.application-form-path,.application-embedded .application-form-path)>:not(.application-form-path):not(.application-form-root):not(script):not(style):not(link):not(.toast){display:none!important}
+.application-embedded .application-form-root{display:block!important;width:100%!important;max-width:1080px!important;margin:0 auto!important;padding:20px!important;border:0!important;border-radius:0!important;box-shadow:none!important}
+.application-embedded .form-section{padding:16px 0!important}
+.application-embedded .form-section:first-child{padding-top:0!important}
+.application-embedded .form-section>p,.application-embedded .form-head>p,.application-embedded .form-tip,.application-embedded .hint,.application-embedded .form-type span{display:none!important}
+.application-embedded .form-grid,.application-embedded .fields,.application-embedded .form-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px!important}
+.application-embedded .field.full{grid-column:1/-1!important}
+.application-embedded .application-form-root>.field{margin-top:14px}
+.application-embedded .form-head{padding:0 0 14px!important}
+.application-embedded .actions,.application-embedded .application-actions{position:sticky;bottom:0;z-index:2;margin:20px -20px -20px!important;padding:14px 20px!important;background:#fff!important;border-top:1px solid #e2e9f1;display:flex;justify-content:flex-end;gap:10px}
+.application-embedded .application-actions button,.application-embedded .actions button{min-width:110px;border-radius:6px}
+.application-embedded .upload{display:block}
+.application-embedded input,.application-embedded select,.application-embedded textarea{max-width:100%;min-width:0}
+@media(max-width:600px){.application-drawer{width:100%}.application-drawer-bar{padding:10px 12px;gap:6px}.application-drawer-bar h2{font-size:16px}.application-drawer-bar button{font-size:12px;padding:7px 8px}.application-embedded .form-grid,.application-embedded .fields,.application-embedded .form-row,.application-embedded .check-grid{grid-template-columns:1fr!important}.application-embedded .field.full{grid-column:1!important}.application-embedded .form-type-options{grid-template-columns:1fr 1fr}.application-embedded .application-form-root{padding:16px!important}.application-embedded .actions,.application-embedded .application-actions{margin:16px -16px -16px!important;padding:12px 16px!important;flex-wrap:wrap}}
