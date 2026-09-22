@@ -34,7 +34,7 @@ input,select,textarea{border-radius:6px}
 .primary,.work,.actions .submit,.talent-form-button,.expert-book{background:var(--gj-brand)!important}
 .hero .primary{background:#fff!important;color:var(--gj-brand)!important;border-color:#fff!important}
 .hero .ghost{background:transparent!important;color:#fff!important;border-color:rgba(255,255,255,.65)!important}
-.hero,.course-cover{background-image:var(--gj-gradient)!important}
+.hero{background-image:var(--gj-gradient)!important}
 .cs-new-badge,.hxb-new{background:var(--gj-brand-secondary)!important}
 .cs-update-dot,.update-dot{background:var(--gj-brand-secondary)!important}
 .category,.service,.guide-card,.feature-card,.service-map,.map-col,.info-panel{border-radius:6px!important}
@@ -45,4 +45,32 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
   outline:2px solid rgba(0,89,236,.32)!important;outline-offset:2px
 }
 button:disabled,input:disabled,select:disabled,textarea:disabled{cursor:not-allowed!important;opacity:.45}
-@media(max-width:820px){.hero h1,.detail-main h1,.detail-hero h1{font-size:26px!important}}
+.crumb,.cs-crumb{margin-top:0!important;margin-bottom:0!important;padding:8px 0!important;min-height:36px!important;font-size:12px!important;line-height:20px!important}
+.crumb .crumb-home{display:none!important}
+.crumb+main{margin-top:0!important}
+.hero,.title,.report-head{min-height:72px!important;height:auto!important;margin-top:0!important;margin-bottom:0!important;padding:14px 24px!important;display:flex!important;align-items:center!important;gap:20px!important;overflow:hidden!important;border-radius:6px!important;background:linear-gradient(110deg,#075ce7,#337ded 65%,#5996f4)!important;box-shadow:0 3px 10px rgba(0,70,180,.06)!important}
+body>.hero{margin-top:12px!important}
+.page-view>.hero{margin-top:0!important}
+.hero:before,.hero:after{display:none!important}
+.hero .hero-content,.hero .hero-copy{display:flex!important;align-items:center!important;min-width:0!important;max-width:100%!important;padding:0!important}
+.hero .hero-copy{flex:1 1 auto!important}
+.hero small,.hero p,.hero-actions,.hero .eyebrow,.hero-stat,.hero-facts,.hero-points,.hero .hero-tags,.title small,.title p,.report-head small,.report-head p{display:none!important}
+.hero h1,.title h1,.report-head h1{margin:0!important;min-width:0;white-space:normal!important;font-size:23px!important;line-height:1.4!important;letter-spacing:.3px}
+.hero .my-learning{display:flex!important;align-items:center!important;gap:0!important;margin:0 0 0 auto!important;padding:0!important;background:none!important;border:0!important}
+.hero .my-learning h3,.hero .my-learning button{display:none!important}
+.hero .my-learning .learning-row{display:flex;flex-direction:column;gap:2px;padding:0 12px!important;border-bottom:0!important;white-space:nowrap;font-size:12px}
+.hero .my-learning .learning-row+.learning-row{border-left:1px solid rgba(255,255,255,.24)!important}
+.hero .my-learning .learning-row b{text-align:left}
+.hero.hero--hub{justify-content:space-between!important}
+.hero.hero--hub h1{flex-shrink:0}
+.hero.hero--hub .tabs{display:flex!important;align-items:center;gap:3px;margin:0 0 0 auto;padding:3px;background:rgba(0,39,119,.16);border:1px solid rgba(255,255,255,.2);border-radius:7px;min-width:0}
+.hero.hero--hub .tabs:empty{display:none!important}
+.hero.hero--hub .tabs button{flex:0 0 auto;margin:0;padding:6px 14px;border:0;border-radius:5px;background:transparent;color:#fff;line-height:22px;white-space:nowrap;cursor:pointer}
+.hero.hero--hub .tabs button:hover{background:rgba(255,255,255,.14)}
+.hero.hero--hub .tabs button.active{background:#fff;color:#075bdc;font-weight:600;box-shadow:0 2px 6px rgba(0,41,115,.12)}
+.hero.hero--hub .tabs button:focus-visible{outline:2px solid #fff!important;outline-offset:-2px}
+.hero.hero--hub .tabs button.active:focus-visible{outline-color:#075bdc!important}
+.report-head>div{min-width:0!important}
+.report-head .status{margin-left:auto!important;padding:0 0 0 16px!important;min-width:0!important}
+@media(max-width:820px){.hero,.title,.report-head{min-height:68px!important;padding:12px 18px!important;flex-wrap:wrap;gap:12px!important}.hero h1,.title h1,.report-head h1{font-size:21px!important}.hero.hero--hub .tabs{max-width:100%;overflow-x:auto;margin-left:0}.hero.hero--hub .tabs button{padding:5px 10px}.hero .my-learning{margin-left:0!important;flex-wrap:wrap}.hero .my-learning .learning-row:first-of-type{padding-left:0!important}.hero .my-learning .learning-row:nth-of-type(2){display:none}}
+@media(max-width:500px){.hero .my-learning{width:100%}.report-head .status{display:none!important}}

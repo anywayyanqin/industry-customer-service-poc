@@ -5,6 +5,7 @@
 
   function isPhoneInput(input) {
     if (!input || input.tagName !== 'INPUT') return false;
+    if (input.closest('.platform-login')) return false;
     var type = (input.getAttribute('type') || 'text').toLowerCase();
     if (type !== 'text' && type !== 'tel' && type !== '') return false;
     var context = [

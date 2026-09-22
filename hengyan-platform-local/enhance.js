@@ -525,7 +525,7 @@
     var app = el('div', 'hxb-migrated-shell', ''); app.id = 'hxb-app';
     var frame = document.createElement('iframe');
     frame.className = 'hxb-migrated-frame';
-    frame.style.cssText = 'display:block;width:100%;min-width:100%;min-height:720px;border:0;background:transparent;';
+    frame.style.cssText = 'display:block;width:100%;min-width:100%;min-height:0;border:0;background:transparent;';
     frame.title = '基础服务';
     frame.src = migratedBasicTarget || '/basic-service/basic-service-home.html';
     frame.addEventListener('load', function () {
@@ -533,7 +533,7 @@
       try {
         var doc = frame.contentDocument;
         var style = doc.createElement('style');
-        style.textContent = 'header,.header,.utility,.top,.site-footer,footer,.data-disclaimer,.prototype-notice,.service-mega,.mega-menu{display:none!important}body{background:transparent!important;font-family:inherit!important;padding-top:0!important}main{padding-top:0!important}.crumb{margin-top:16px!important}';
+        style.textContent = 'body>header,.header,.header-wrap,.utility,.top,.site-footer,body>footer,.data-disclaimer,.prototype-notice,.service-mega,.mega-menu{display:none!important}body{display:flow-root!important;background:transparent!important;font-family:inherit!important;padding-top:0!important}main{padding-top:0!important}.crumb{margin-top:0!important}';
         doc.head.appendChild(style);
         doc.addEventListener('click', function (event) {
           var control = event.target && event.target.closest ? event.target.closest('a,button,[data-link],[data-go],[data-page-link],[data-action]') : null;
@@ -547,7 +547,7 @@
           var entry = document.querySelector('.workspace-entry');
           if (entry) entry.click();
         }, true);
-        var syncHeight = function () { frame.style.height = Math.max(720, doc.documentElement.scrollHeight) + 'px'; };
+        var syncHeight = function () { frame.style.height = Math.ceil(Math.max(doc.body.scrollHeight, doc.body.getBoundingClientRect().height)) + 'px'; };
         syncHeight();
         if (window.ResizeObserver) new ResizeObserver(syncHeight).observe(doc.body);
       } catch (ignore) {}
@@ -760,7 +760,8 @@
       app = document.getElementById('hxb-app');
     }
     var frame = app && app.querySelector('iframe');
-    if (frame && frame.getAttribute('src') !== target) frame.src = target;
+    // Internal navigation changes the frame URL without changing its src attribute.
+    if (frame && frame.contentWindow.location.href !== new URL(target, location.href).href) frame.src = target;
     resetMigratedBasicScroll(frame);
   });
   function goBasic(section, tab) {
